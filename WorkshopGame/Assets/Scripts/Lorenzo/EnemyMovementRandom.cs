@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyMovement2 : MonoBehaviour
+public class EnemyMovementRandom : MonoBehaviour
 {
     private NavMeshAgent _nav;
 
@@ -14,16 +14,16 @@ public class EnemyMovement2 : MonoBehaviour
     private PlayerMovement _target;
 
     [SerializeField]
-    private float _aheadModifier = 10f;
-
+    private MeshRenderer _ground;
+    
     [SerializeField]
-    private float _updatePositionInterval = 0.5f;
-
-    [SerializeField]
-    private float _distanceToChase = 2f;
+    private float _distanceToChase = 5f;
 
     [SerializeField]
     private Color _drawColor = Color.green;
+
+    [SerializeField]
+    private float _wanderDistance = 10f;
 
     private void Awake()
     {
@@ -31,6 +31,7 @@ public class EnemyMovement2 : MonoBehaviour
     }
     private void Start()
     {
+        SetNextRandomPosition();
         this.StartCoroutine(SetPosition());
     }
     private IEnumerator SetPosition()
@@ -39,7 +40,7 @@ public class EnemyMovement2 : MonoBehaviour
         {
             if (this._target == null)
             {
-                Debug.LogWarning("EnemyMovement2 did not destroy gracefully.");
+                Debug.LogWarning("EnemyMovementRandom did not destroy gracefully.");
                 break;
             }
             if (Vector3.Distance(this._target.transform.position, this.transform.position) < this._distanceToChase)
@@ -49,15 +50,26 @@ public class EnemyMovement2 : MonoBehaviour
                 // wait for next frame
                 yield return null;
             }
-            else
+            else if (Vector3.Distance(this.transform.position, this._targetPos) < 2f)
             {
-                this._targetPos = this._target.transform.position + (this._target.Direction * _aheadModifier);
-                _nav.SetDestination(this._targetPos);
-                yield return new WaitForSeconds(this._updatePositionInterval);
+                SetNextRandomPosition();
+                yield return null;
             }
+            else
+                yield return new WaitForSeconds(0.1f);
         }
     }
 
+    private void SetNextRandomPosition()
+    {
+        Bounds b = this._ground.bounds;
+        float x = Random.Range(b.min.x, b.max.x);
+        float z = Random.Range(b.min.z, b.max.z);
+        NavMesh.SamplePosition(new Vector3(x, 0, z), out NavMeshHit hit, _wanderDistance, 1);
+        this._targetPos = hit.position;
+        _nav.SetDestination(this._targetPos);
+
+    }
 
     void OnDestroy()
     {

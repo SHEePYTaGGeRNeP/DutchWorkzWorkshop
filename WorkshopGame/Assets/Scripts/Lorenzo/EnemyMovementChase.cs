@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyMovement1 : MonoBehaviour
+public class EnemyMovementChase : MonoBehaviour
 {
     private NavMeshAgent _nav;
     private Vector3 _targetPos;
