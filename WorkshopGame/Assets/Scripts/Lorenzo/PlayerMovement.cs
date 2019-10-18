@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float _speed = 0.5f;
 
+    /// <summary>Since we don't rotate, the forward vector stays the same.</summary>
     public Vector3 Direction { get; private set; }
 
     // Start is called before the first frame update

@@ -1,51 +1,40 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyMovementRandom : MonoBehaviour
+public class EnemyMovementRandom : EnemyMovementBase
 {
-    private NavMeshAgent _nav;
-
-    private Vector3 _targetPos;
-
-    [SerializeField]
-    private PlayerMovement _target;
-
     [SerializeField]
     private MeshRenderer _ground;
-    
+
+    [SerializeField]
+    private Transform _player;
+
     [SerializeField]
     private float _distanceToChase = 5f;
 
     [SerializeField]
-    private Color _drawColor = Color.green;
-
-    [SerializeField]
     private float _wanderDistance = 10f;
 
-    private void Awake()
-    {
-        this._nav = this.GetComponent<NavMeshAgent>();
-    }
     private void Start()
     {
         SetNextRandomPosition();
         this.StartCoroutine(SetPosition());
     }
+
     private IEnumerator SetPosition()
     {
         while (this.isActiveAndEnabled)
         {
-            if (this._target == null)
+            if (this._player == null)
             {
                 Debug.LogWarning("EnemyMovementRandom did not destroy gracefully.");
                 break;
             }
-            if (Vector3.Distance(this._target.transform.position, this.transform.position) < this._distanceToChase)
+            if (Vector3.Distance(this._player.transform.position, this.transform.position) < this._distanceToChase)
             {
-                this._targetPos = this._target.transform.position;
+                this._targetPos = this._player.transform.position;
                 _nav.SetDestination(this._targetPos);
                 // wait for next frame
                 yield return null;
@@ -68,7 +57,6 @@ public class EnemyMovementRandom : MonoBehaviour
         NavMesh.SamplePosition(new Vector3(x, 0, z), out NavMeshHit hit, _wanderDistance, 1);
         this._targetPos = hit.position;
         _nav.SetDestination(this._targetPos);
-
     }
 
     void OnDestroy()
@@ -76,11 +64,4 @@ public class EnemyMovementRandom : MonoBehaviour
         this.StopCoroutine(this.SetPosition());
     }
 
-    private void OnDrawGizmos()
-    {
-        var old = Gizmos.color;
-        Gizmos.color = _drawColor;
-        Gizmos.DrawLine(this.transform.position, _targetPos);
-        Gizmos.color = old;
-    }
 }

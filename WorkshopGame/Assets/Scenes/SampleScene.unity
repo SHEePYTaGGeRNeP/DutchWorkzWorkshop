@@ -2391,10 +2391,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3638482a94620d24899fdcb849cff66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 115651815}
-  _ground: {fileID: 1970668140}
-  _distanceToChase: 5
   _drawColor: {r: 1, g: 0, b: 1, a: 1}
+  _ground: {fileID: 1970668140}
+  _player: {fileID: 115651820}
+  _distanceToChase: 5
   _wanderDistance: 10
 --- !u!195 &806514887
 NavMeshAgent:
@@ -2984,11 +2984,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae962ba003b10a4f869bf6afe89daa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _drawColor: {r: 1, g: 1, b: 0, a: 1}
   _target: {fileID: 115651815}
   _aheadModifier: -10
   _updatePositionInterval: 0.5
   _distanceToChase: 5
-  _drawColor: {r: 1, g: 1, b: 0, a: 1}
 --- !u!195 &995491914
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4169,11 +4169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae962ba003b10a4f869bf6afe89daa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _drawColor: {r: 0, g: 1, b: 0, a: 1}
   _target: {fileID: 115651815}
   _aheadModifier: 20
   _updatePositionInterval: 0.5
   _distanceToChase: 5
-  _drawColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!195 &1428431268
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6944,8 +6944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d1f3415c26467458e86ff3bd0ebeee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 115651820}
   _drawColor: {r: 1, g: 0, b: 0, a: 1}
+  _target: {fileID: 115651820}
 --- !u!114 &2066134847
 MonoBehaviour:
   m_ObjectHideFlags: 0

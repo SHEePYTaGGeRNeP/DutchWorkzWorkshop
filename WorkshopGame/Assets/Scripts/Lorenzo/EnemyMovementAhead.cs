@@ -1,15 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class EnemyMovementAhead : MonoBehaviour
+public class EnemyMovementAhead : EnemyMovementBase
 {
-    private NavMeshAgent _nav;
-
-    private Vector3 _targetPos;
-
     [SerializeField]
     private PlayerMovement _target;
 
@@ -22,13 +16,6 @@ public class EnemyMovementAhead : MonoBehaviour
     [SerializeField]
     private float _distanceToChase = 5f;
 
-    [SerializeField]
-    private Color _drawColor = Color.green;
-
-    private void Awake()
-    {
-        this._nav = this.GetComponent<NavMeshAgent>();
-    }
     private void Start()
     {
         this.StartCoroutine(SetPosition());
@@ -64,11 +51,4 @@ public class EnemyMovementAhead : MonoBehaviour
         this.StopCoroutine(this.SetPosition());
     }
 
-    private void OnDrawGizmos()
-    {
-        var old = Gizmos.color;
-        Gizmos.color = _drawColor;
-        Gizmos.DrawLine(this.transform.position, _targetPos);
-        Gizmos.color = old;
-    }
 }
