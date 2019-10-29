@@ -5,6 +5,9 @@ namespace Assets.Scripts.Lorenzo
 {
     public class LorenzoPlayerTouch : MonoBehaviour
     {
+        [SerializeField]
+        private AudioSource _coinPickupAudioSource;
+
         public GameObjectUnityEvent CoinTouched;
 
         private void OnCollisionEnter(Collision collision)
@@ -22,6 +25,7 @@ namespace Assets.Scripts.Lorenzo
             if (c is null)
                 return;
             CoinTouched?.Invoke(c.gameObject);
+            this._coinPickupAudioSource.Play();
         }
     }
 }
