@@ -15,7 +15,7 @@ public abstract class EnemyMovementBase : MonoBehaviour
         this._nav = this.GetComponent<NavMeshAgent>();
     }
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         var old = Gizmos.color;
         Gizmos.color = _drawColor;

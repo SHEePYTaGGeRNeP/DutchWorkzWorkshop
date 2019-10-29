@@ -32,6 +32,7 @@ public class LorenzoEnemyMovementRandom : EnemyMovementBase
                 Debug.LogWarning("EnemyMovementRandom did not destroy gracefully.");
                 break;
             }
+            // chase the enemy when within aggro range
             if (Vector3.Distance(this._player.transform.position, this.transform.position) < this._distanceToChase)
             {
                 this._targetPos = this._player.transform.position;
@@ -62,6 +63,12 @@ public class LorenzoEnemyMovementRandom : EnemyMovementBase
     void OnDestroy()
     {
         this.StopCoroutine(this.SetPosition());
+    }
+
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+
     }
 
 }

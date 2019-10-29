@@ -29,6 +29,7 @@ public class LorenzoEnemyMovementAhead : EnemyMovementBase
                 Debug.LogWarning("EnemyMovementAhead did not destroy gracefully.");
                 break;
             }
+            // chase the enemy when within aggro range
             if (Vector3.Distance(this._target.transform.position, this.transform.position) < this._distanceToChase)
             {
                 this._targetPos = this._target.transform.position;

@@ -2363,6 +2363,7 @@ GameObject:
   - component: {fileID: 806514889}
   - component: {fileID: 806514888}
   - component: {fileID: 806514887}
+  - component: {fileID: 806514886}
   m_Layer: 0
   m_Name: EnemyRandom
   m_TagString: Untagged
@@ -2370,6 +2371,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &806514886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806514885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de728e5c7f0db0f4fbdfef855d9c4593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &806514887
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2925,6 +2938,7 @@ GameObject:
   - component: {fileID: 995491916}
   - component: {fileID: 995491915}
   - component: {fileID: 995491914}
+  - component: {fileID: 995491913}
   m_Layer: 0
   m_Name: EnemyBehind
   m_TagString: Untagged
@@ -2932,6 +2946,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &995491913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995491912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de728e5c7f0db0f4fbdfef855d9c4593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &995491914
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4148,6 +4174,7 @@ GameObject:
   - component: {fileID: 1428431270}
   - component: {fileID: 1428431269}
   - component: {fileID: 1428431268}
+  - component: {fileID: 1428431267}
   m_Layer: 0
   m_Name: EnemyAhead
   m_TagString: Untagged
@@ -4155,6 +4182,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1428431267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428431266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de728e5c7f0db0f4fbdfef855d9c4593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &1428431268
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6811,6 +6850,7 @@ GameObject:
   - component: {fileID: 2066134843}
   - component: {fileID: 2066134842}
   - component: {fileID: 2066134841}
+  - component: {fileID: 2066134846}
   m_Layer: 0
   m_Name: EnemyChase
   m_TagString: Untagged
@@ -6913,6 +6953,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2066134846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066134840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de728e5c7f0db0f4fbdfef855d9c4593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2113194924
 GameObject:
   m_ObjectHideFlags: 0

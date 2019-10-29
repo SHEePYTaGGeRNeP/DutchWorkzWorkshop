@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e28b5bb3786e1419795a29205fa97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinPrefab: {fileID: 2688158911231228336, guid: d913147a451b4f6498a76a741d93eb29,
+  _coinPrefab: {fileID: 4176727210548131364, guid: ad0a5b23c8833ed4fb5715196a021e45,
     type: 3}
   _startAmount: 6
   _minDistanceFromPlayer: 5
