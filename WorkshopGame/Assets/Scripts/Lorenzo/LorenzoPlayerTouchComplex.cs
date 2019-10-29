@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Lorenzo
 {
-    public class LorenzoPlayerTouch : MonoBehaviour
+    public class LorenzoPlayerTouchComplex : MonoBehaviour
     {
         [SerializeField]
         private AudioSource _coinPickupAudioSource;
