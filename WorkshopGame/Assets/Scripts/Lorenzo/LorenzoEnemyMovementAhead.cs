@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class LorenzoEnemyMovementAhead : EnemyMovementBase
 {
@@ -45,7 +44,6 @@ public class LorenzoEnemyMovementAhead : EnemyMovementBase
             }
         }
     }
-
 
     void OnDestroy()
     {

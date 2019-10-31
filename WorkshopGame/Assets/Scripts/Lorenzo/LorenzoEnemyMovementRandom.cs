@@ -65,10 +65,4 @@ public class LorenzoEnemyMovementRandom : EnemyMovementBase
         this.StopCoroutine(this.SetPosition());
     }
 
-    protected override void OnDrawGizmos()
-    {
-        base.OnDrawGizmos();
-
-    }
-
 }
